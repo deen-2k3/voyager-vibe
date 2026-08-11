@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "bali",
+    "name": "Bali, Indonesia",
+    "region": "Asia",
+    "image": "/images/destinations/bali-1.jpg",
+    "gallery": [
+      "/images/destinations/bali-1.jpg",
+      "/images/destinations/bali-2.jpg",
+      "/images/destinations/bali-3.jpg"
+    ],
+    "tagline": "Emerald rice terraces and hidden waterfalls",
+    "description": "Trek through jungle waterfalls, greet the sunrise from a volcano summit, and relax on black-sand beaches.",
+    "rating": 4.7,
+    "bestSeason": "Apr – Oct"
+  },
+  {
+    "slug": "japan",
+    "name": "Mount Fuji, Japan",
+    "region": "Asia",
+    "image": "/images/destinations/japan-1.jpg",
+    "tagline": "Cherry blossoms beneath Mount Fuji",
+    "description": "Watch the sunset paint the sky behind Mount Fuji from a hillside pagoda, wrapped in a sea of blooming cherry blossoms.",
+    "rating": 4.9,
+    "bestSeason": "Mar – Apr"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "custom-tour-planning",
+    "title": "Custom Tour Planning",
+    "description": "Tell us your travel style and budget — our planners build a day-by-day itinerary built entirely around you.",
+    "icon": "map"
+  },
+  {
+    "slug": "flights-and-hotels",
+    "title": "Flight & Hotel Booking",
+    "description": "We compare routes and properties across our partner network to find the best combination of comfort and price.",
+    "icon": "briefcase"
+  },
+  {
+    "slug": "visa-assistance",
+    "title": "Visa Assistance",
+    "description": "Document checklists, appointment scheduling, and application review so nothing holds up your trip.",
+    "icon": "document"
+  },
+  {
+    "slug": "travel-insurance",
+    "title": "Travel Insurance",
+    "description": "Coverage options for trip cancellation, medical emergencies, and lost baggage, explained in plain language.",
+    "icon": "shield"
+  },
+  {
+    "slug": "group-tours",
+    "title": "Group & Corporate Tours",
+    "description": "Custom itineraries for family reunions, friend groups, and corporate retreats of any size.",
+    "icon": "users"
+  },
+  {
+    "slug": "airport-transfers",
+    "title": "Airport Transfers",
+    "description": "Private pickup and drop-off arranged at every destination on your itinerary, no scrambling for taxis.",
+    "icon": "car"
+  }
+]
