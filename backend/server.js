@@ -3,11 +3,11 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
-const destinationsRouter = require("./routes/destinations");
-const blogsRouter = require("./routes/blogs");
-const servicesRouter = require("./routes/services");
-const contactRouter = require("./routes/contact");
-const uploadsRouter = require("./routes/uploads");
+const destinationsRouter = require("./src/routes/destinations");
+const blogsRouter = require("./src/routes/blogs");
+const servicesRouter = require("./src/routes/services");
+const contactRouter = require("./src/routes/contact");
+const uploadsRouter = require("./src/routes/uploads");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -15,7 +15,7 @@ const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || "http://localhost:3000";
 
 app.use(cors({ origin: FRONTEND_ORIGIN }));
 app.use(express.json());
-app.use("/uploads", express.static(path.join(__dirname, "..", "public", "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "public", "uploads")));
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
