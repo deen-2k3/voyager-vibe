@@ -1,33 +1,31 @@
 # dependencies
 node_modules/
-frontend/node_modules/
-backend/node_modules/
 
 # env files (real secrets never go in git)
 .env
 .env.local
 .env*.local
 .env.production
+!.env*.example
 
 # local deploy staging (contains built output + secrets, not for git)
 deploy/
 *.zip
 
 # next.js
-# The production build (frontend/.next) IS committed on purpose — Hostinger's
+# The production build (.next) IS committed on purpose — Hostinger's
 # Node.js app runner has no separate build step, so we ship a pre-built
 # .next to avoid the app timing out while building on first boot.
-frontend/.next/cache/
-frontend/.next/dev/
-frontend/.next/trace*
-frontend/.next/diagnostics/
-frontend/out/
-frontend/next-env.d.ts
+.next/cache/
+.next/dev/
+.next/trace*
+.next/diagnostics/
+out/
+next-env.d.ts
 *.tsbuildinfo
 
 # logs
 *.log
-backend/backend.log
 
 # misc
 .DS_Store
