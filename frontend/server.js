@@ -16,9 +16,19 @@ const port = process.env.PORT || 3000;
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
+process.on("unhandledRejection", (err) => {
+  console.error("Unhandled rejection:", err);
+});
+
 app.prepare().then(() => {
   createServer((req, res) => {
-    handle(req, res);
+    handle(req, res).catch((err) => {
+      console.error("Request handler error:", err);
+      if (!res.headersSent) {
+        res.statusCode = 500;
+        res.end("Internal Server Error");
+      }
+    });
   }).listen(port, () => {
     console.log(`Voyager Vibe frontend listening on port ${port}`);
   });
