@@ -8,6 +8,11 @@ import { ICONS, IconMapPin } from "@/components/icons";
 
 export const metadata: Metadata = { title: "Services | Voyager Vibe" };
 
+// Reads services.json directly at request time so admin panel edits show up
+// without a rebuild — force-dynamic since there's no fetch() call left
+// for Next to infer that from.
+export const dynamic = "force-dynamic";
+
 export default async function ServicesPage() {
   const services = await api.services();
 

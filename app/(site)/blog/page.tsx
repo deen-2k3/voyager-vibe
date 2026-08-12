@@ -7,6 +7,11 @@ import { api } from "@/lib/api";
 
 export const metadata: Metadata = { title: "Blog | Voyager Vibe" };
 
+// Reads blogs.json directly at request time so admin panel edits show up
+// without a rebuild — force-dynamic since there's no fetch() call left
+// for Next to infer that from.
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage() {
   const posts = await api.blogs();
 

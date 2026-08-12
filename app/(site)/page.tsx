@@ -11,6 +11,11 @@ import HeroFlightPath from "@/components/HeroFlightPath";
 import { IconMapPin, IconSuitcase, IconHeadset, IconUsers } from "@/components/icons";
 import { api } from "@/lib/api";
 
+// Reads destinations.json directly at request time so admin panel edits
+// show up without a rebuild — force-dynamic since there's no fetch() call
+// left for Next to infer that from.
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const destinations = await api.destinations();
 
