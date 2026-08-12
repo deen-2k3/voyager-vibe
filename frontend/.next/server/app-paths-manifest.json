@@ -1,0 +1,18 @@
+{
+  "/(site)/about/page": "app/(site)/about/page.js",
+  "/(site)/blog/[slug]/page": "app/(site)/blog/[slug]/page.js",
+  "/(site)/blog/page": "app/(site)/blog/page.js",
+  "/(site)/contact/page": "app/(site)/contact/page.js",
+  "/(site)/destinations/[slug]/page": "app/(site)/destinations/[slug]/page.js",
+  "/(site)/destinations/page": "app/(site)/destinations/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/services/page": "app/(site)/services/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/destinations/[slug]/edit/page": "app/admin/destinations/[slug]/edit/page.js",
+  "/admin/destinations/new/page": "app/admin/destinations/new/page.js",
+  "/admin/destinations/page": "app/admin/destinations/page.js",
+  "/admin/enquiries/page": "app/admin/enquiries/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}

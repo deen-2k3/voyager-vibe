@@ -1,0 +1,3 @@
+module.exports=[88457,a=>{"use strict";var b=a.i(87924),c=a.i(72131);a.s(["default",0,function({children:a,delay:d=0,className:e=""}){let f=(0,c.useRef)(null),[g,h]=(0,c.useState)(!1);return(0,c.useEffect)(()=>{let a=f.current;if(!a)return;if("u"<typeof IntersectionObserver)return void h(!0);let b=new IntersectionObserver(([a])=>{a.isIntersecting&&(h(!0),b.disconnect())},{threshold:.15,rootMargin:"0px 0px -10% 0px"});return b.observe(a),()=>b.disconnect()},[]),(0,b.jsx)("div",{ref:f,style:{transitionDelay:g?`${d}ms`:"0ms"},className:`h-full transition-all duration-700 ease-out will-change-transform ${g?"translate-y-0 opacity-100":"translate-y-8 opacity-0"} ${e}`,children:a})}])}];
+
+//# sourceMappingURL=components_Reveal_tsx_0h6w84g._.js.map

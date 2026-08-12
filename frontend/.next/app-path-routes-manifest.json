@@ -1,0 +1,18 @@
+{
+  "/(site)/about/page": "/about",
+  "/(site)/blog/[slug]/page": "/blog/[slug]",
+  "/(site)/blog/page": "/blog",
+  "/(site)/contact/page": "/contact",
+  "/(site)/destinations/[slug]/page": "/destinations/[slug]",
+  "/(site)/destinations/page": "/destinations",
+  "/(site)/page": "/",
+  "/(site)/services/page": "/services",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/destinations/[slug]/edit/page": "/admin/destinations/[slug]/edit",
+  "/admin/destinations/new/page": "/admin/destinations/new",
+  "/admin/destinations/page": "/admin/destinations",
+  "/admin/enquiries/page": "/admin/enquiries",
+  "/admin/page": "/admin",
+  "/favicon.ico/route": "/favicon.ico"
+}

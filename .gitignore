@@ -14,7 +14,13 @@ deploy/
 *.zip
 
 # next.js
-frontend/.next/
+# The production build (frontend/.next) IS committed on purpose — Hostinger's
+# Node.js app runner has no separate build step, so we ship a pre-built
+# .next to avoid the app timing out while building on first boot.
+frontend/.next/cache/
+frontend/.next/dev/
+frontend/.next/trace*
+frontend/.next/diagnostics/
 frontend/out/
 frontend/next-env.d.ts
 *.tsbuildinfo

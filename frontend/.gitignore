@@ -14,7 +14,12 @@
 /coverage
 
 # next.js
-/.next/
+# .next itself IS committed on purpose (see root .gitignore) — only the
+# local-dev-only pieces are excluded here.
+/.next/cache/
+/.next/dev/
+/.next/trace*
+/.next/diagnostics/
 /out/
 
 # production
