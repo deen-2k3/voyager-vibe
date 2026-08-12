@@ -23,5 +23,247 @@
     "description": "Watch the sunset paint the sky behind Mount Fuji from a hillside pagoda, wrapped in a sea of blooming cherry blossoms.",
     "rating": 4.9,
     "bestSeason": "Mar – Apr"
+  },
+  {
+    "slug": "thailand",
+    "name": "Thailand",
+    "region": "Asia",
+    "image": "/images/destinations/thailand-1.jpg",
+    "tagline": "Golden temples and turquoise islands",
+    "description": "Explore ornate Buddhist temples, drift through floating markets, and unwind on limestone-flanked beaches.",
+    "rating": 4.7,
+    "bestSeason": "Nov – Feb"
+  },
+  {
+    "slug": "malaysia",
+    "name": "Malaysia",
+    "region": "Asia",
+    "image": "/images/destinations/malaysia-1.jpg",
+    "tagline": "Rainforest canopies and skyline nights",
+    "description": "Wander ancient rainforest trails by day and take in Kuala Lumpur's skyline from a rooftop bar by night.",
+    "rating": 4.6,
+    "bestSeason": "Dec – Feb"
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "region": "Asia",
+    "image": "/images/destinations/singapore-1.jpg",
+    "gallery": [
+      "/images/destinations/singapore-1.jpg",
+      "/images/destinations/singapore-2.jpg",
+      "/images/destinations/singapore-3.jpg"
+    ],
+    "tagline": "Futuristic gardens and street-food nights",
+    "description": "Walk beneath the glowing Supertrees, sample hawker-stall favorites, and catch the skyline from Marina Bay.",
+    "rating": 4.8,
+    "bestSeason": "Feb – Apr"
+  },
+  {
+    "slug": "vietnam",
+    "name": "Vietnam",
+    "region": "Asia",
+    "image": "/images/destinations/vietnam-1.jpg",
+    "tagline": "Emerald bays and lantern-lit streets",
+    "description": "Cruise past limestone karsts in Ha Long Bay, cycle through rice paddies, and wander the lantern-lit lanes of Hoi An.",
+    "rating": 4.7,
+    "bestSeason": "Feb – Apr"
+  },
+  {
+    "slug": "bhutan",
+    "name": "Bhutan",
+    "region": "Asia",
+    "image": "/images/destinations/bhutan-1.jpg",
+    "tagline": "Cliffside monasteries in the Himalayas",
+    "description": "Trek to the Tiger's Nest monastery clinging to a cliffside and experience the last Buddhist kingdom's untouched valleys.",
+    "rating": 4.9,
+    "bestSeason": "Mar – May, Sep – Nov"
+  },
+  {
+    "slug": "maldives",
+    "name": "Maldives",
+    "region": "Asia",
+    "image": "/images/destinations/maldives-1.jpg",
+    "tagline": "Overwater villas and coral reefs",
+    "description": "Snorkel over vibrant coral reefs, watch the sunset from an overwater villa, and slow down on your own private sandbar.",
+    "rating": 4.9,
+    "bestSeason": "Nov – Apr"
+  },
+  {
+    "slug": "uae-dubai",
+    "name": "UAE Dubai",
+    "region": "Middle East",
+    "image": "/images/destinations/uae-dubai-1.jpg",
+    "tagline": "Desert dunes and record-breaking skylines",
+    "description": "Ride the dunes on a desert safari, ascend the world's tallest tower, and shop beneath the world's largest indoor aquarium.",
+    "rating": 4.6,
+    "bestSeason": "Nov – Mar"
+  },
+  {
+    "slug": "ladakh",
+    "name": "Ladakh",
+    "region": "India",
+    "image": "/images/destinations/ladakh-1.jpg",
+    "tagline": "High-altitude deserts and turquoise lakes",
+    "description": "Ride past snow-capped mountain passes, camp beside Pangong Lake, and explore centuries-old Buddhist monasteries in the trans-Himalayan desert.",
+    "rating": 4.8,
+    "bestSeason": "May – Sep"
+  },
+  {
+    "slug": "jammu-kashmir",
+    "name": "Jammu & Kashmir",
+    "region": "India",
+    "image": "/images/destinations/jammu-kashmir-1.jpg",
+    "tagline": "Alpine valleys and floating gardens",
+    "description": "Drift on a shikara across Dal Lake, ski the slopes of Gulmarg, and wander through Mughal gardens framed by snow peaks.",
+    "rating": 4.8,
+    "bestSeason": "Apr – Oct"
+  },
+  {
+    "slug": "himachal-pradesh",
+    "name": "Himachal Pradesh",
+    "region": "India",
+    "image": "/images/destinations/himachal-pradesh-2.jpg",
+    "gallery": [
+      "/images/destinations/himachal-pradesh-2.jpg",
+      "/images/destinations/himachal-pradesh-1.jpg",
+      "/images/destinations/himachal-pradesh-3.jpg",
+      "/images/destinations/himachal-pradesh-4.jpg"
+    ],
+    "tagline": "Pine-covered hills and mountain trails",
+    "description": "Trek through pine forests, sip tea in colonial hill towns, and watch the sunrise over snow-capped Himalayan peaks.",
+    "rating": 4.7,
+    "bestSeason": "Mar – Jun, Sep – Nov"
+  },
+  {
+    "slug": "goa",
+    "name": "Goa",
+    "region": "India",
+    "image": "/images/destinations/goa-1.jpg",
+    "tagline": "Sun-soaked beaches and Portuguese charm",
+    "description": "Unwind on golden beaches, explore whitewashed churches, and dance the night away at a beachside shack.",
+    "rating": 4.6,
+    "bestSeason": "Nov – Feb"
+  },
+  {
+    "slug": "kerala",
+    "name": "Kerala",
+    "region": "India",
+    "image": "/images/destinations/kerala-1.jpg",
+    "gallery": [
+      "/images/destinations/kerala-1.jpg",
+      "/images/destinations/kerala-2.jpg"
+    ],
+    "tagline": "Palm-lined backwaters and spice hills",
+    "description": "Cruise the backwaters on a houseboat, wander tea plantations in Munnar, and relax on Kerala's palm-fringed beaches.",
+    "rating": 4.8,
+    "bestSeason": "Sep – Mar"
+  },
+  {
+    "slug": "tamil-nadu",
+    "name": "Tamil Nadu",
+    "region": "India",
+    "image": "/images/destinations/tamil-nadu-1.jpg",
+    "tagline": "Ancient temples and coastal heritage",
+    "description": "Wander towering Dravidian temple gopurams, explore colonial-era Pondicherry, and unwind on the Coromandel coast.",
+    "rating": 4.6,
+    "bestSeason": "Nov – Feb"
+  },
+  {
+    "slug": "karnataka",
+    "name": "Karnataka",
+    "region": "India",
+    "image": "/images/destinations/karnataka-1.jpg",
+    "gallery": [
+      "/images/destinations/karnataka-1.jpg",
+      "/images/destinations/karnataka-2.avif"
+    ],
+    "tagline": "Royal palaces and coffee-scented hills",
+    "description": "Explore Mysore's royal palaces, hike through coffee plantations in Coorg, and discover ancient ruins in Hampi.",
+    "rating": 4.6,
+    "bestSeason": "Oct – Feb"
+  },
+  {
+    "slug": "sikkim",
+    "name": "Sikkim",
+    "region": "India",
+    "image": "/images/destinations/sikkim-1.jpg",
+    "gallery": [
+      "/images/destinations/sikkim-1.jpg",
+      "/images/destinations/sikkim-2.jpg"
+    ],
+    "tagline": "Monastery trails beneath Kanchenjunga",
+    "description": "Trek beneath the world's third-highest peak, visit cliffside monasteries, and drive through terraced valleys of flowers.",
+    "rating": 4.8,
+    "bestSeason": "Mar – May, Oct – Nov"
+  },
+  {
+    "slug": "andaman-islands",
+    "name": "Andaman Islands",
+    "region": "India",
+    "image": "/images/destinations/andaman-2.jpg",
+    "gallery": [
+      "/images/destinations/andaman-2.jpg",
+      "/images/destinations/andaman-1.jpg"
+    ],
+    "tagline": "Coral reefs and untouched beaches",
+    "description": "Snorkel over vibrant coral reefs, relax on Radhanagar's white sands, and step back in time at the historic Cellular Jail.",
+    "rating": 4.8,
+    "bestSeason": "Nov – Apr"
+  },
+  {
+    "slug": "arunachal-pradesh",
+    "name": "Arunachal Pradesh",
+    "region": "India",
+    "image": "/images/destinations/arunachal-pradesh-1.webp",
+    "gallery": [
+      "/images/destinations/arunachal-pradesh-1.webp",
+      "/images/destinations/arunachal-pradesh-2.jpg"
+    ],
+    "tagline": "Untouched valleys of the eastern Himalayas",
+    "description": "Journey through remote monasteries, cross high mountain passes, and discover one of India's least-explored corners.",
+    "rating": 4.7,
+    "bestSeason": "Oct – Apr"
+  },
+  {
+    "slug": "austria",
+    "name": "Hallstatt, Austria",
+    "region": "Europe",
+    "image": "/images/destinations/austria-1.jpg",
+    "tagline": "A snow-dusted lakeside village in the Alps",
+    "description": "Wander cobblestone lanes beneath a soaring church spire, watch lantern light reflect off the lake, and take in the Alps blanketed in snow.",
+    "rating": 4.9,
+    "bestSeason": "Dec – Feb"
+  },
+  {
+    "slug": "rajasthan",
+    "name": "Rajasthan",
+    "region": "India",
+    "image": "/images/destinations/rajasthan-2.jpg",
+    "gallery": [
+      "/images/destinations/rajasthan-2.jpg",
+      "/images/destinations/rajasthan-3.jpg",
+      "/images/destinations/rajasthan-1.jpg",
+      "/images/destinations/rajasthan-4.jpg"
+    ],
+    "tagline": "Golden forts and desert camps under the stars",
+    "description": "Ride a camel across the Thar Desert at sunset, wander the sandstone ramparts of Jaisalmer Fort, and spend the night at a candlelit desert camp.",
+    "rating": 4.8,
+    "bestSeason": "Oct – Mar"
+  },
+  {
+    "slug": "paris",
+    "name": "Paris, France",
+    "region": "Europe",
+    "image": "/images/destinations/paris-1.jpg",
+    "gallery": [
+      "/images/destinations/paris-1.jpg",
+      "/images/destinations/paris-2.jpg",
+      "/images/destinations/paris-3.jpg"
+    ],
+    "tagline": "Iron towers and rain-lit cobblestone streets",
+    "description": "Stand beneath the Eiffel Tower by day and watch it glow in tricolor at night, then wander cobblestone lanes scattered with autumn leaves.",
+    "rating": 4.9,
+    "bestSeason": "Apr – Jun, Sep – Oct"
   }
 ]

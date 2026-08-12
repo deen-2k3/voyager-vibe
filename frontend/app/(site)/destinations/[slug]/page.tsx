@@ -31,8 +31,15 @@ export default async function DestinationDetailPage({ params }: Props) {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="relative h-72 w-full sm:h-96">
-          <Image src={destination.image} alt={destination.name} fill className="object-cover" />
+        <div className="relative aspect-[16/9] w-full min-h-[280px]">
+          <Image
+            src={destination.image}
+            alt={destination.name}
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/10 to-transparent" />
         </div>
         <Container className="absolute inset-x-0 bottom-0 pb-8 text-white">

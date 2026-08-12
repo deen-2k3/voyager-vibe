@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
-import { IconMapPin, IconHeadset, IconDocument } from "@/components/icons";
+import SocialIcons from "@/components/SocialIcons";
+import { IconHeadset, IconDocument } from "@/components/icons";
 
 export const metadata: Metadata = { title: "Contact Us | Voyager Vibe" };
 
@@ -22,21 +23,17 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             <div className="flex gap-4">
-              <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-forest text-white">
-                <IconMapPin className="h-5 w-5" />
-              </span>
-              <div>
-                <h3 className="font-serif text-base font-semibold text-ink">Office</h3>
-                <p className="mt-1 text-sm text-ink-muted">24 Trailhead Ave, Denver, CO 80202</p>
-              </div>
-            </div>
-            <div className="flex gap-4">
               <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-crimson text-white">
                 <IconHeadset className="h-5 w-5" />
               </span>
               <div>
-                <h3 className="font-serif text-base font-semibold text-ink">Support</h3>
-                <p className="mt-1 text-sm text-ink-muted">Available 24/7 at +1 (555) 019-2837</p>
+                <h3 className="font-serif text-base font-semibold text-ink">Call Us</h3>
+                <a
+                  href="tel:+919971118370"
+                  className="mt-1 block text-sm text-ink-muted [@media(hover:hover)]:hover:text-crimson"
+                >
+                  +91 99711 18370
+                </a>
               </div>
             </div>
             <div className="flex gap-4">
@@ -45,8 +42,23 @@ export default function ContactPage() {
               </span>
               <div>
                 <h3 className="font-serif text-base font-semibold text-ink">Email</h3>
-                <p className="mt-1 text-sm text-ink-muted">hello@voyagervibe.com</p>
+                <a
+                  href="mailto:voyagervibe0001@gmail.com"
+                  className="mt-1 block text-sm text-ink-muted [@media(hover:hover)]:hover:text-crimson"
+                >
+                  voyagervibe0001@gmail.com
+                </a>
+                <a
+                  href="mailto:contact@voyagervibe.in"
+                  className="mt-1 block text-sm text-ink-muted [@media(hover:hover)]:hover:text-crimson"
+                >
+                  contact@voyagervibe.in
+                </a>
               </div>
+            </div>
+            <div>
+              <h3 className="font-serif text-base font-semibold text-ink">Follow Us</h3>
+              <SocialIcons className="mt-3" tone="light" />
             </div>
           </div>
         </Container>

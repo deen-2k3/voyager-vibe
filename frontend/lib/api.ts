@@ -29,8 +29,8 @@ export type Service = {
   icon: string;
 };
 
-async function getJson<T>(path: string, revalidate = 60): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, { next: { revalidate } });
+async function getJson<T>(path: string): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, { cache: "no-store" });
   if (!res.ok) throw new Error(`Request to ${path} failed with ${res.status}`);
   return res.json();
 }

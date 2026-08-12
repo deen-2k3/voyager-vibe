@@ -16,4 +16,10 @@ function appendJson(filename, entry) {
   return entry;
 }
 
-module.exports = { readJson, appendJson };
+function writeJson(filename, list) {
+  const filePath = path.join(dataDir, filename);
+  fs.writeFileSync(filePath, JSON.stringify(list, null, 2), "utf8");
+  return list;
+}
+
+module.exports = { readJson, appendJson, writeJson };

@@ -71,9 +71,27 @@ export default function Footer() {
             Get in Touch
           </h3>
           <ul className="mt-4 space-y-3 text-sm text-white/75">
-            <li>hello@voyagervibe.com</li>
-            <li>+1 (555) 019-2837</li>
-            <li>24 Trailhead Ave, Denver, CO</li>
+            <li>
+              <a href="tel:+919971118370" className="transition-colors hover:text-white">
+                +91 99711 18370
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:voyagervibe0001@gmail.com"
+                className="transition-colors hover:text-white"
+              >
+                voyagervibe0001@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:contact@voyagervibe.in"
+                className="transition-colors hover:text-white"
+              >
+                contact@voyagervibe.in
+              </a>
+            </li>
           </ul>
         </div>
       </Container>
