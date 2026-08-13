@@ -97,8 +97,16 @@ export default function Footer() {
       </Container>
 
       <div className="border-t border-white/10 py-6">
-        <Container className="flex flex-col items-center justify-between gap-2 text-xs text-white/60 sm:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-3 text-xs text-white/60 sm:flex-row">
           <p>© {new Date().getFullYear()} Voyager Vibe. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-white">
+              Terms & Conditions
+            </Link>
+          </div>
           <p>Explore More. Live The Vibe.</p>
         </Container>
       </div>
