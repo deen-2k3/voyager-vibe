@@ -1,5 +1,6 @@
+const { randomUUID } = require("crypto");
 const { Router } = require("express");
-const { readJson, appendJson } = require("../lib/store");
+const { readJson, appendJson, writeJson } = require("../lib/store");
 const adminAuth = require("../middleware/adminAuth");
 
 const router = Router();
@@ -18,6 +19,7 @@ router.post("/", (req, res) => {
   }
 
   const entry = appendJson("feedback.json", {
+    id: randomUUID(),
     name,
     email,
     rating: ratingNumber,
@@ -26,6 +28,19 @@ router.post("/", (req, res) => {
   });
 
   res.status(201).json({ ok: true, entry });
+});
+
+router.delete("/:id", adminAuth, (req, res) => {
+  const submissions = readJson("feedback.json");
+  const index = submissions.findIndex((s) => s.id === req.params.id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Feedback not found" });
+  }
+
+  const [removed] = submissions.splice(index, 1);
+  writeJson("feedback.json", submissions);
+  res.json({ ok: true, entry: removed });
 });
 
 module.exports = router;

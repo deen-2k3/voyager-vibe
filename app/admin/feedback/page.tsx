@@ -7,6 +7,7 @@ import StarRating from "@/components/StarRating";
 export default function FeedbackPage() {
   const [submissions, setSubmissions] = useState<FeedbackSubmission[] | null>(null);
   const [error, setError] = useState("");
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     adminFetch("/api/feedback")
@@ -17,6 +18,21 @@ export default function FeedbackPage() {
       .then((data) => setSubmissions(data))
       .catch(() => setError("Could not load feedback."));
   }, []);
+
+  async function handleDelete(id: string, name: string) {
+    if (!window.confirm(`Delete feedback from "${name}"? This can't be undone.`)) return;
+
+    setDeletingId(id);
+    try {
+      const res = await adminFetch(`/api/feedback/${id}`, { method: "DELETE" });
+      if (!res.ok) throw new Error("Delete failed");
+      setSubmissions((prev) => (prev ? prev.filter((s) => s.id !== id) : prev));
+    } catch {
+      setError(`Could not delete feedback from "${name}".`);
+    } finally {
+      setDeletingId(null);
+    }
+  }
 
   return (
     <div>
@@ -39,7 +55,7 @@ export default function FeedbackPage() {
         <div className="mt-6 space-y-4">
           {submissions.map((s, i) => (
             <div
-              key={`${s.email}-${s.createdAt}-${i}`}
+              key={s.id ?? `${s.email}-${s.createdAt}-${i}`}
               className="rounded-2xl border border-border-soft bg-white p-5 shadow-sm"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -58,6 +74,14 @@ export default function FeedbackPage() {
               {s.message ? (
                 <p className="mt-2 text-sm leading-relaxed text-ink-muted">{s.message}</p>
               ) : null}
+              <button
+                type="button"
+                onClick={() => handleDelete(s.id, s.name)}
+                disabled={deletingId === s.id}
+                className="mt-3 cursor-pointer text-sm font-semibold text-crimson disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {deletingId === s.id ? "Deleting…" : "Delete"}
+              </button>
             </div>
           ))}
         </div>

@@ -39,6 +39,7 @@ export type ContactSubmission = {
 };
 
 export type FeedbackSubmission = {
+  id: string;
   name: string;
   email: string;
   rating: number;
