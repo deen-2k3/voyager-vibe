@@ -32,6 +32,7 @@ export async function adminFetch(path: string, options: RequestInit = {}) {
 export type ContactSubmission = {
   name: string;
   email: string;
+  phone: string;
   subject: string | null;
   message: string;
   createdAt: string;

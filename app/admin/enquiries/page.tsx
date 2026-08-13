@@ -50,7 +50,9 @@ export default function EnquiriesPage() {
                   })}
                 </p>
               </div>
-              <p className="mt-1 text-sm text-forest">{s.email}</p>
+              <p className="mt-1 text-sm text-forest">
+                {s.email} · {s.phone}
+              </p>
               {s.subject ? (
                 <p className="mt-2 text-sm font-semibold text-ink">Subject: {s.subject}</p>
               ) : null}

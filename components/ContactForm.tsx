@@ -23,6 +23,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: formData.get("name"),
           email: formData.get("email"),
+          phone: formData.get("phone"),
           subject: formData.get("subject"),
           message: formData.get("message"),
         }),
@@ -75,6 +76,18 @@ export default function ContactForm() {
             className="mt-1 w-full rounded-lg border border-border-soft px-3 py-2 text-sm focus:border-crimson focus:outline-none"
           />
         </div>
+      </div>
+      <div>
+        <label htmlFor="phone" className="text-sm font-medium text-ink">
+          Mobile number
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          required
+          className="mt-1 w-full rounded-lg border border-border-soft px-3 py-2 text-sm focus:border-crimson focus:outline-none"
+        />
       </div>
       <div>
         <label htmlFor="subject" className="text-sm font-medium text-ink">

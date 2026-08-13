@@ -10,15 +10,16 @@ router.get("/", adminAuth, (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { name, email, subject, message } = req.body || {};
+  const { name, email, phone, subject, message } = req.body || {};
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: "Name, email and message are required" });
+  if (!name || !email || !phone || !message) {
+    return res.status(400).json({ error: "Name, email, mobile number and message are required" });
   }
 
   const entry = appendJson("contacts.json", {
     name,
     email,
+    phone,
     subject: subject || null,
     message,
     createdAt: new Date().toISOString(),
