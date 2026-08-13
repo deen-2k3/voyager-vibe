@@ -42,6 +42,23 @@ export type Service = {
   icon: string;
 };
 
+export type Testimonial = {
+  id: string;
+  name: string;
+  rating: number;
+  message: string;
+  createdAt: string;
+};
+
+type RawFeedback = {
+  id: string;
+  name: string;
+  email: string;
+  rating: number;
+  message: string | null;
+  createdAt: string;
+};
+
 export const api = {
   destinations: async () => readJson<Destination[]>("destinations.json"),
   destination: async (slug: string) => {
@@ -56,4 +73,14 @@ export const api = {
     return found;
   },
   services: async () => readJson<Service[]>("services.json"),
+  // Only feedback with a written message makes sense as a testimonial —
+  // star-only submissions are skipped. Newest first.
+  feedback: async (limit?: number): Promise<Testimonial[]> => {
+    const all = readJson<RawFeedback[]>("feedback.json")
+      .filter((f): f is RawFeedback & { message: string } => Boolean(f.message))
+      .slice()
+      .reverse()
+      .map((f) => ({ id: f.id, name: f.name, rating: f.rating, message: f.message, createdAt: f.createdAt }));
+    return typeof limit === "number" ? all.slice(0, limit) : all;
+  },
 };

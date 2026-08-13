@@ -10,6 +10,7 @@
   "/(site)/privacy/page": "/privacy",
   "/(site)/services/page": "/services",
   "/(site)/terms/page": "/terms",
+  "/(site)/testimonials/page": "/testimonials",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
   "/admin/destinations/[slug]/edit/page": "/admin/destinations/[slug]/edit",

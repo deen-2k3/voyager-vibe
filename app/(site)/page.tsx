@@ -17,6 +17,7 @@ export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const destinations = await api.destinations();
+  const testimonials = await api.feedback(6);
 
   return (
     <>
@@ -177,7 +178,7 @@ export default async function HomePage() {
             <SectionHeading eyebrow="Traveler Stories" title="What Our Travelers Say" />
           </Reveal>
           <Reveal delay={120} className="mt-12">
-            <Testimonials />
+            <Testimonials items={testimonials} />
           </Reveal>
         </Container>
       </section>

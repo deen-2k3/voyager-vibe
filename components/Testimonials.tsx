@@ -1,47 +1,39 @@
-import StarRating from "./StarRating";
+import Link from "next/link";
+import TestimonialCard from "./TestimonialCard";
+import type { Testimonial } from "@/lib/api";
 
-const TESTIMONIALS = [
-  {
-    name: "Priya Sharma",
-    trip: "Alpine Adventure Trek",
-    quote:
-      "Every detail was handled — from the cable car tickets to the fondue dinner reservation. The Swiss Alps trip felt effortless.",
-    rating: 5,
-  },
-  {
-    name: "Marcus Webb",
-    trip: "Santorini Sunset Escape",
-    quote:
-      "Our planner built the itinerary around our budget without cutting corners. The catamaran cruise was the highlight of the year.",
-    rating: 5,
-  },
-  {
-    name: "Aiko Tanaka",
-    trip: "Japan Cultural Journey",
-    quote:
-      "Genuinely the smoothest group trip I've been on. The guides in Kyoto knew exactly which times to avoid the crowds.",
-    rating: 4.9,
-  },
-];
-
-export default function Testimonials() {
-  return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {TESTIMONIALS.map((t) => (
-        <figure
-          key={t.name}
-          className="flex flex-col rounded-2xl border border-border-soft bg-white p-6 shadow-sm"
+export default function Testimonials({ items }: { items: Testimonial[] }) {
+  if (items.length === 0) {
+    return (
+      <div className="rounded-2xl border border-dashed border-border-soft bg-white p-10 text-center">
+        <p className="text-sm text-ink-muted">
+          No traveler stories yet — be the first to share how your trip went.
+        </p>
+        <Link
+          href="/feedback"
+          className="mt-4 inline-block text-sm font-semibold text-forest [@media(hover:hover)]:hover:text-crimson"
         >
-          <StarRating rating={t.rating} />
-          <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
-            &ldquo;{t.quote}&rdquo;
-          </blockquote>
-          <figcaption className="mt-4 border-t border-border-soft pt-4">
-            <p className="font-serif text-sm font-semibold text-ink">{t.name}</p>
-            <p className="text-xs text-ink-muted">{t.trip}</p>
-          </figcaption>
-        </figure>
-      ))}
+          Leave feedback →
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((t) => (
+          <TestimonialCard key={t.id} testimonial={t} />
+        ))}
+      </div>
+      <div className="mt-10 text-center">
+        <Link
+          href="/testimonials"
+          className="text-sm font-semibold text-forest [@media(hover:hover)]:hover:text-crimson"
+        >
+          Read more traveler stories →
+        </Link>
+      </div>
     </div>
   );
 }
