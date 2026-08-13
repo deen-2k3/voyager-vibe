@@ -62,7 +62,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 36638,
+      "htmlSize": 36892,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -198,11 +198,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/admin/feedback": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 8988,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/admin/feedback",
+      "dataRoute": "/admin/feedback.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/contact": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 37039,
+      "htmlSize": 37293,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -258,11 +286,39 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/feedback": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 29294,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/feedback",
+      "dataRoute": "/feedback.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/privacy": {
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 34959,
+      "htmlSize": 34947,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -290,7 +346,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 75797,
+      "htmlSize": 75974,
       "experimentalBypassFor": [
         {
           "type": "header",

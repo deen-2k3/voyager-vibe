@@ -15,11 +15,7 @@ const PROSE_CLASSES =
 export default function PrivacyPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Legal"
-        title="Privacy Policy"
-        description="Effective Date: [DD Month YYYY] · Last Updated: [DD Month YYYY]"
-      />
+      <PageHeader eyebrow="Legal" title="Privacy Policy" />
 
       <section className="py-16">
         <Container className="max-w-3xl">

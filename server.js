@@ -1,3 +1,8 @@
+// Pin the working directory to this file's location regardless of how the
+// process was launched — Next's project-root resolution and lib/api.ts's
+// data-file reads both depend on process.cwd() matching the repo root.
+process.chdir(__dirname);
+
 require("dotenv").config();
 const path = require("path");
 const express = require("express");
@@ -8,6 +13,7 @@ const blogsRouter = require("./api/routes/blogs");
 const servicesRouter = require("./api/routes/services");
 const contactRouter = require("./api/routes/contact");
 const uploadsRouter = require("./api/routes/uploads");
+const feedbackRouter = require("./api/routes/feedback");
 
 const dev = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 3000;
@@ -31,6 +37,7 @@ nextApp.prepare().then(() => {
   server.use("/api/services", servicesRouter);
   server.use("/api/contact", contactRouter);
   server.use("/api/uploads", uploadsRouter);
+  server.use("/api/feedback", feedbackRouter);
 
   server.use((req, res) => {
     handle(req, res).catch((err) => {

@@ -5,6 +5,7 @@
   "/(site)/contact/page": "app/(site)/contact/page.js",
   "/(site)/destinations/[slug]/page": "app/(site)/destinations/[slug]/page.js",
   "/(site)/destinations/page": "app/(site)/destinations/page.js",
+  "/(site)/feedback/page": "app/(site)/feedback/page.js",
   "/(site)/page": "app/(site)/page.js",
   "/(site)/privacy/page": "app/(site)/privacy/page.js",
   "/(site)/services/page": "app/(site)/services/page.js",
@@ -15,6 +16,7 @@
   "/admin/destinations/new/page": "app/admin/destinations/new/page.js",
   "/admin/destinations/page": "app/admin/destinations/page.js",
   "/admin/enquiries/page": "app/admin/enquiries/page.js",
+  "/admin/feedback/page": "app/admin/feedback/page.js",
   "/admin/page": "app/admin/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }

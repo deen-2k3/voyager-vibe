@@ -12,6 +12,7 @@ const EXPLORE_LINKS = [
 const COMPANY_LINKS = [
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
+  { href: "/feedback", label: "Feedback" },
 ];
 
 export default function Footer() {

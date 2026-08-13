@@ -7,7 +7,6 @@ import DestinationCard from "@/components/DestinationCard";
 import Testimonials from "@/components/Testimonials";
 import SocialFollowBanner from "@/components/SocialFollowBanner";
 import Reveal from "@/components/Reveal";
-import HeroFlightPath from "@/components/HeroFlightPath";
 import { IconMapPin, IconSuitcase, IconHeadset, IconUsers } from "@/components/icons";
 import { api } from "@/lib/api";
 
@@ -32,8 +31,6 @@ export default async function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-cream/75 via-cream/25 to-transparent lg:from-cream/70 lg:via-cream/10 lg:to-transparent" />
         </div>
-
-        <HeroFlightPath className="pointer-events-none absolute right-4 top-24 hidden h-20 w-56 sm:block lg:right-8 lg:top-28 lg:h-28 lg:w-72" />
 
         <Container className="relative py-20 sm:py-24 lg:py-28">
           <div className="relative">

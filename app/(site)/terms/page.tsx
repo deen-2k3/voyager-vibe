@@ -15,11 +15,7 @@ const PROSE_CLASSES =
 export default function TermsPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Legal"
-        title="Terms & Conditions"
-        description="Effective Date: [DD Month YYYY] · Last Updated: [DD Month YYYY]"
-      />
+      <PageHeader eyebrow="Legal" title="Terms & Conditions" />
 
       <section className="py-16">
         <Container className="max-w-3xl">
@@ -523,15 +519,17 @@ export default function TermsPage() {
             <p>
               Website: <a href="http://www.voyagervibe.in">www.voyagervibe.in</a>
             </p>
-            <p>Registered Office: [Insert complete registered office address]</p>
+            <p>Registered Office: C-57 Street No. 8, Jagatpuri Extension, Near GTB Hospital, Delhi</p>
             <p>
               Email:{" "}
-              <a href="mailto:contact@voyagervibe.in">contact@voyagervibe.in</a>
+              <a href="mailto:voyagervibe0001@gmail.com">voyagervibe0001@gmail.com</a>
             </p>
             <p>
               Phone/WhatsApp: <a href="tel:+919971118370">+91 99711 18370</a>
             </p>
-            <p>GSTIN: [Insert GSTIN]</p>
+            <p>
+              Grievance/Privacy Contact Person: <strong>Dinesh Chand (Director)</strong>
+            </p>
 
             <p className="mt-10 font-medium text-ink">
               By using www.voyagervibe.in, submitting an enquiry or making a booking, you

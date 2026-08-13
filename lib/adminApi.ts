@@ -38,6 +38,14 @@ export type ContactSubmission = {
   createdAt: string;
 };
 
+export type FeedbackSubmission = {
+  name: string;
+  email: string;
+  rating: number;
+  message: string | null;
+  createdAt: string;
+};
+
 export type DestinationInput = {
   name: string;
   region: string;

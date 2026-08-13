@@ -5,6 +5,7 @@
   "/(site)/contact/page": "/contact",
   "/(site)/destinations/[slug]/page": "/destinations/[slug]",
   "/(site)/destinations/page": "/destinations",
+  "/(site)/feedback/page": "/feedback",
   "/(site)/page": "/",
   "/(site)/privacy/page": "/privacy",
   "/(site)/services/page": "/services",
@@ -15,6 +16,7 @@
   "/admin/destinations/new/page": "/admin/destinations/new",
   "/admin/destinations/page": "/admin/destinations",
   "/admin/enquiries/page": "/admin/enquiries",
+  "/admin/feedback/page": "/admin/feedback",
   "/admin/page": "/admin",
   "/favicon.ico/route": "/favicon.ico"
 }
