@@ -57,3 +57,12 @@ export type DestinationInput = {
   rating: number;
   bestSeason: string;
 };
+
+export type BlogInput = {
+  title: string;
+  image: string;
+  author: string;
+  date: string;
+  excerpt: string;
+  content: string;
+};

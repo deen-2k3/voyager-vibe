@@ -23,6 +23,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/admin/blogs/[slug]/edit",
+      "regex": "^/admin/blogs/([^/]+?)/edit(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/admin/blogs/(?<nxtPslug>[^/]+?)/edit(?:/)?$"
+    },
+    {
       "page": "/admin/destinations/[slug]/edit",
       "regex": "^/admin/destinations/([^/]+?)/edit(?:/)?$",
       "routeKeys": {
@@ -77,6 +85,18 @@
       "regex": "^/admin(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/blogs",
+      "regex": "^/admin/blogs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/blogs(?:/)?$"
+    },
+    {
+      "page": "/admin/blogs/new",
+      "regex": "^/admin/blogs/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/blogs/new(?:/)?$"
     },
     {
       "page": "/admin/destinations",

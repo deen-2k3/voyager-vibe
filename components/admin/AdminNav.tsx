@@ -7,6 +7,7 @@ import { clearAdminToken } from "@/lib/adminApi";
 const LINKS = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/destinations", label: "Destinations" },
+  { href: "/admin/blogs", label: "Blog" },
   { href: "/admin/enquiries", label: "Enquiries" },
   { href: "/admin/feedback", label: "Feedback" },
 ];

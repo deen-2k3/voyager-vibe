@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { adminFetch } from "@/lib/adminApi";
 
-const MAX_IMAGES = 10;
-
 export default function ImageUploader({
   images,
   onChange,
+  max = 10,
 }: {
   images: string[];
   onChange: (urls: string[]) => void;
+  max?: number;
 }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -21,9 +21,9 @@ export default function ImageUploader({
     const files = Array.from(e.target.files || []);
     if (files.length === 0) return;
 
-    const remaining = MAX_IMAGES - images.length;
+    const remaining = max - images.length;
     if (remaining <= 0) {
-      setError(`You can upload up to ${MAX_IMAGES} images.`);
+      setError(`You can upload up to ${max} image${max === 1 ? "" : "s"}.`);
       if (inputRef.current) inputRef.current.value = "";
       return;
     }
@@ -63,7 +63,7 @@ export default function ImageUploader({
             className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-border-soft"
           >
             <Image src={url} alt={`Image ${i + 1}`} fill className="object-cover" sizes="96px" />
-            {i === 0 ? (
+            {i === 0 && max > 1 ? (
               <span className="absolute left-1 top-1 rounded bg-crimson px-1.5 py-0.5 text-[10px] font-semibold text-white">
                 Cover
               </span>
@@ -79,14 +79,14 @@ export default function ImageUploader({
           </div>
         ))}
 
-        {images.length < MAX_IMAGES ? (
+        {images.length < max ? (
           <label className="flex h-24 w-24 flex-shrink-0 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-border-soft px-2 text-center text-xs text-ink-muted transition-colors duration-200 [@media(hover:hover)]:hover:border-crimson [@media(hover:hover)]:hover:text-crimson">
             {uploading ? "Uploading…" : "+ Add photo"}
             <input
               ref={inputRef}
               type="file"
               accept="image/*"
-              multiple
+              multiple={max > 1}
               className="hidden"
               onChange={handleFilesSelected}
               disabled={uploading}
@@ -96,9 +96,9 @@ export default function ImageUploader({
       </div>
 
       <p className="mt-2 text-xs text-ink-muted">
-        {images.length}/{MAX_IMAGES} images uploaded. The first photo is used as the cover image
-        — drag isn&apos;t supported yet, so remove and re-add in order if you need to change the
-        cover.
+        {max === 1
+          ? `${images.length}/1 image uploaded.`
+          : `${images.length}/${max} images uploaded. The first photo is used as the cover image — drag isn't supported yet, so remove and re-add in order if you need to change the cover.`}
       </p>
       {error ? <p className="mt-1 text-sm text-crimson">{error}</p> : null}
     </div>
