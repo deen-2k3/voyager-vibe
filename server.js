@@ -4,6 +4,7 @@
 process.chdir(__dirname);
 
 require("dotenv").config();
+const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const next = require("next");
@@ -22,50 +23,56 @@ process.on("unhandledRejection", (err) => {
   console.error("Unhandled rejection:", err);
 });
 
-// Set SITE_LOCKED=true in the host's environment variables to take the whole
-// site offline (everything 404s, Next.js never even initializes) — e.g. while
-// a client payment is pending. Remove the variable and restart to restore.
-if (process.env.SITE_LOCKED === "true") {
-  const lockedServer = express();
-  lockedServer.use((req, res) => {
-    res.status(404).send("Not Found");
-  });
-  lockedServer.listen(port, () => {
-    console.log(`Voyager Vibe is LOCKED (SITE_LOCKED=true) — serving 404 on port ${port}`);
-  });
-} else {
-  startApp();
+const lockFilePath = path.join(__dirname, "site-lock.json");
+
+// Checked on every request (not just at startup) so editing site-lock.json
+// and pushing to git is enough to lock/unlock the site — no Hostinger panel
+// access needed, and it takes effect even without a process restart.
+// SITE_LOCKED=true as an env var still works too, if you ever have panel access again.
+function isSiteLocked() {
+  if (process.env.SITE_LOCKED === "true") return true;
+  try {
+    const { locked } = JSON.parse(fs.readFileSync(lockFilePath, "utf8"));
+    return locked === true;
+  } catch {
+    return false;
+  }
 }
 
-function startApp() {
-  const nextApp = next({ dev });
-  const handle = nextApp.getRequestHandler();
+const nextApp = next({ dev });
+const handle = nextApp.getRequestHandler();
 
-  nextApp.prepare().then(() => {
-    const server = express();
+nextApp.prepare().then(() => {
+  const server = express();
 
-    server.use(express.json());
-    server.use("/uploads", express.static(path.join(__dirname, "public", "uploads")));
+  server.use((req, res, next) => {
+    if (isSiteLocked()) {
+      return res.status(404).send("Not Found");
+    }
+    next();
+  });
 
-    server.get("/api/health", (req, res) => res.json({ ok: true }));
-    server.use("/api/destinations", destinationsRouter);
-    server.use("/api/blogs", blogsRouter);
-    server.use("/api/services", servicesRouter);
-    server.use("/api/contact", contactRouter);
-    server.use("/api/uploads", uploadsRouter);
-    server.use("/api/feedback", feedbackRouter);
+  server.use(express.json());
+  server.use("/uploads", express.static(path.join(__dirname, "public", "uploads")));
 
-    server.use((req, res) => {
-      handle(req, res).catch((err) => {
-        console.error("Request handler error:", err);
-        if (!res.headersSent) {
-          res.status(500).send("Internal Server Error");
-        }
-      });
-    });
+  server.get("/api/health", (req, res) => res.json({ ok: true }));
+  server.use("/api/destinations", destinationsRouter);
+  server.use("/api/blogs", blogsRouter);
+  server.use("/api/services", servicesRouter);
+  server.use("/api/contact", contactRouter);
+  server.use("/api/uploads", uploadsRouter);
+  server.use("/api/feedback", feedbackRouter);
 
-    server.listen(port, () => {
-      console.log(`Voyager Vibe listening on port ${port}`);
+  server.use((req, res) => {
+    handle(req, res).catch((err) => {
+      console.error("Request handler error:", err);
+      if (!res.headersSent) {
+        res.status(500).send("Internal Server Error");
+      }
     });
   });
-}
+
+  server.listen(port, () => {
+    console.log(`Voyager Vibe listening on port ${port}`);
+  });
+});
